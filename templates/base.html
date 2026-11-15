@@ -1,0 +1,78 @@
+{% load static %}<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{% static 'img/logo-icone.png' %}">
+  <title>{% block titulo %}ONG CRIAS - Transformando vidas{% endblock %}</title>
+  <!-- Fontes do manual da marca e Bootstrap 5 -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=League+Spartan:wght@600;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- Menu do topo -->
+<nav class="navbar navbar-expand-lg navbar-crias sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/logo-horizontal.png' %}" alt="CRIAS" height="42"></a>
+    <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="{% url 'sobre' %}">Quem Somos</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'projetos' %}">Projetos</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'padrinho' %}">Apadrinhe</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'voluntario' %}">Voluntariado</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'doacao' %}">Doações</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'contato' %}">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mensagens de sucesso ou erro dos formulários -->
+<div class="container mt-3">
+  {% for m in messages %}
+    <div class="alert alert-{{ m.tags }} alert-dismissible fade show">{{ m.message }}
+      <button class="btn-close" data-bs-dismiss="alert"></button></div>
+  {% endfor %}
+</div>
+
+{% block conteudo %}{% endblock %}
+
+<!-- Rodapé -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-5">
+        <img src="{% static 'img/logo-completa.png' %}" alt="CRIAS" height="90" class="bg-white rounded-3 p-2 mb-3 d-block">
+        <p>Associação sem fins lucrativos, fundada em 2009, que atua na Comunidade Menino de Deus, em São Gonçalo/RJ.</p>
+      </div>
+      <div class="col-md-3">
+        <h6 class="text-white">Links</h6>
+        <a href="{% url 'sobre' %}">Quem Somos</a><br>
+        <a href="{% url 'projetos' %}">Projetos</a><br>
+        <a href="{% url 'padrinho' %}">Apadrinhar</a><br>
+        <a href="{% url 'doacao' %}">Doar</a><br>
+        <a href="{% url 'privacidade' %}">Política de Privacidade</a>
+      </div>
+      <div class="col-md-4">
+        <h6 class="text-white">Contato</h6>
+        <a href="https://wa.me/5521972518763" target="_blank" rel="noopener">(21)97251-8763</a><br>
+        <a href="mailto:contato.crias@gmail.com">contato.crias@gmail.com</a><br>
+        <a href="https://www.instagram.com/ongcrias/" target="_blank" rel="noopener">@ongcrias</a><br>
+        <a href="https://share.google/HW9shx8I1uddyyA2K" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div> 
+    <hr class="border-secondary">
+    <p class="text-center small mb-0">© 2009 ONG CRIAS - Centro de Referência Integral de Atuação Social</p>
+  </div>
+</footer>
+
+<!-- Botão flutuante do WhatsApp -->
+<a class="whats-flutuante" href="https://wa.me/5521972518763" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

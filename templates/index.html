@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+
+<!-- Banner principal -->
+<header class="banner">
+  <div class="container aparecer">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1>Transformando vidas e construindo futuros</h1>
+        <p class="lead my-4">Desde 2009, acolhendo crianças, adolescentes e famílias da Comunidade Menino de Deus, em São Gonçalo/RJ.</p>
+        <a href="{% url 'padrinho' %}" class="btn btn-crias m-1">Quero Apadrinhar</a>
+        <a href="{% url 'voluntario' %}" class="btn btn-light rounded-pill m-1 px-4 py-2">Quero Ser Voluntário</a>
+        <a href="{% url 'doacao' %}" class="btn btn-crias m-1">Fazer Doação</a>
+      </div>
+      <div class="col-lg-5 text-center">
+        <img src="{% static 'img/mascote.png' %}" alt="Cria, o mascote da CRIAS" class="mascote">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Quem somos (resumo) -->
+<section class="fundo-creme">
+  <div class="container aparecer">
+    <h2 class="titulo-secao">Quem Somos</h2>
+    <div class="row align-items-center g-4">
+      <div class="col-md-6 text-center">
+        <img src="{% static 'img/foto-crianca.jpg' %}" alt="Criança abraçando o mascote Cria" class="foto-redonda" style="max-height:420px">
+      </div>
+      <div class="col-md-6 fs-5">
+        <p>A ONG CRIAS é uma associação sem fins lucrativos e sem vinculação político-partidária, que atua pela transformação social e por melhores condições de vida na comunidade e no seu entorno.</p>
+        <p>Acreditamos no potencial das pessoas, na força da comunidade e na construção coletiva de oportunidades.</p>
+        <a href="{% url 'sobre' %}" class="btn btn-verde">Conheça nossa história</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Números -->
+<section>
+  <div class="container">
+    <h2 class="titulo-secao">Nosso Impacto</h2>
+    <div class="row text-center g-4">
+      <div class="col-6 col-md-3 aparecer"><div class="numero">80</div>crianças e adolescentes atendidos</div>
+      <div class="col-6 col-md-3 aparecer"><div class="numero">60</div>famílias atendidas</div>
+      <div class="col-6 col-md-3 aparecer"><div class="numero">30</div>famílias com cestas básicas por mês</div>
+      <div class="col-6 col-md-3 aparecer"><div class="numero">2009</div>ano de fundação</div>
+    </div>
+  </div>
+</section>
+
+<!-- Projetos (resumo) -->
+<section class="fundo-branco">
+  <div class="container">
+    <h2 class="titulo-secao">Nossos Projetos</h2>
+    <div class="row g-4">
+      <div class="col-6 col-md-3 aparecer"><div class="card cartao p-3 text-center"><div class="icone">📚</div><h6>Letramento</h6></div></div>
+      <div class="col-6 col-md-3 aparecer"><div class="card cartao p-3 text-center"><div class="icone">🩰</div><h6>Arte &amp; Vida (Ballet)</h6></div></div>
+      <div class="col-6 col-md-3 aparecer"><div class="card cartao p-3 text-center"><div class="icone">💻</div><h6>Navegadores do Futuro</h6></div></div>
+      <div class="col-6 col-md-3 aparecer"><div class="card cartao p-3 text-center"><div class="icone">🎓</div><h6>Pré-Vestibular</h6></div></div>
+      <div class="col-6 col-md-3 aparecer"><div class="card cartao p-3 text-center"><div class="icone">🧁</div><h6>Mulheres da Comunidade</h6></div></div>
+      <div class="col-6 col-md-3 aparecer"><div class="card cartao p-3 text-center"><div class="icone">🛠️</div><h6>Cursos Livres</h6></div></div>
+      <div class="col-6 col-md-3 aparecer"><div class="card cartao p-3 text-center"><div class="icone">🧺</div><h6>Cestas Básicas</h6></div></div>
+      <div class="col-6 col-md-3 aparecer"><div class="card cartao p-3 text-center"><div class="icone">🤝</div><h6>Faça a Diferença</h6></div></div>
+    </div>
+    <p class="text-center mt-4"><a href="{% url 'projetos' %}" class="btn btn-verde">Ver todos os projetos</a></p>
+  </div>
+</section>
+
+<!-- Como ajudar -->
+<section class="fundo-creme">
+  <div class="container">
+    <h2 class="titulo-secao">Como Ajudar</h2>
+    <div class="row g-4">
+      <div class="col-md-4 aparecer"><div class="card cartao p-4 text-center">
+        <div class="icone">💛</div><h5>Apadrinhe</h5>
+        <p>Com R$ 50,00 por mês você apoia uma criança atendida pelos nossos projetos.</p>
+        <a href="{% url 'padrinho' %}" class="btn btn-verde mt-auto">Apadrinhar</a></div></div>
+      <div class="col-md-4 aparecer"><div class="card cartao p-4 text-center">
+        <div class="icone">🙌</div><h5>Seja voluntário</h5>
+        <p>Compartilhe seu tempo, seus conhecimentos e seu carinho.</p>
+        <a href="{% url 'voluntario' %}" class="btn btn-verde mt-auto">Quero ajudar</a></div></div>
+      <div class="col-md-4 aparecer"><div class="card cartao p-4 text-center">
+        <div class="icone">💚</div><h5>Doe</h5>
+        <p>Você escolhe o valor. Toda contribuição faz a diferença!</p>
+        <a href="{% url 'doacao' %}" class="btn btn-verde mt-auto">Doar agora</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contato -->
+<section>
+  <div class="container text-center aparecer">
+    <h2 class="titulo-secao">Contato</h2>
+    <p>📱 (21) 97251-8763 &nbsp;|&nbsp; 📸 @ongcrias &nbsp;|&nbsp; ✉️ contato.crias@gmail.com</p>
+    <a href="{% url 'contato' %}" class="btn btn-crias">Fale conosco</a>
+  </div>
+</section>
+{% endblock %}

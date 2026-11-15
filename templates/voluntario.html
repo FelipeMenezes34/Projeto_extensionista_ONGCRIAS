@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block titulo %}Voluntariado - ONG CRIAS{% endblock %}
+{% block conteudo %}
+<section class="fundo-creme"><div class="container" style="max-width:640px">
+  <h2 class="titulo-secao">Seja Voluntário</h2>
+  <p class="text-center">Compartilhe seus conhecimentos, talentos e carinho com as crianças e famílias da CRIAS.</p>
+
+  <form method="post" class="caixa-formulario">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label class="form-label">Nome</label>
+      <input type="text" name="nome" class="form-control" maxlength="100" value="{{ dados.nome }}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">E-mail</label>
+      <input type="email" name="email" class="form-control" maxlength="100" value="{{ dados.email }}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Telefone</label>
+      <input type="tel" name="telefone" class="form-control" maxlength="15" placeholder="(21) 99999-9999" value="{{ dados.telefone }}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Área de Interesse</label>
+      <select name="area_interesse" class="form-select" required>
+        <option value="">Selecione...</option>
+        <option value="Reforço escolar" {% if dados.area_interesse == "Reforço escolar" %}selected{% endif %}>Reforço escolar</option>
+        <option value="Oficinas e artes" {% if dados.area_interesse == "Oficinas e artes" %}selected{% endif %}>Oficinas e artes</option>
+        <option value="Esportes e recreação" {% if dados.area_interesse == "Esportes e recreação" %}selected{% endif %}>Esportes e recreação</option>
+        <option value="Administrativo" {% if dados.area_interesse == "Administrativo" %}selected{% endif %}>Administrativo</option>
+        <option value="Eventos e captação" {% if dados.area_interesse == "Eventos e captação" %}selected{% endif %}>Eventos e captação</option>
+      </select>
+    </div>
+    <div class="form-check mb-3">
+      <input type="checkbox" name="consentimento" id="consentimento" class="form-check-input" required>
+      <label class="form-check-label small" for="consentimento">Concordo com o uso dos meus dados para contato da ONG CRIAS (<a href="{% url 'privacidade' %}" target="_blank">Política de Privacidade</a>)</label>
+    </div>
+    <button class="btn btn-verde w-100">Cadastrar Interesse</button>
+  </form>
+</div></section>
+{% endblock %}

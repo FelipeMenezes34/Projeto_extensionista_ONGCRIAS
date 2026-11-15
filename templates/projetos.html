@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block titulo %}Projetos - ONG CRIAS{% endblock %}
+{% block conteudo %}
+<section class="fundo-creme">
+  <div class="container">
+    <h2 class="titulo-secao">Nossos Projetos</h2>
+    <div class="row g-4">
+
+      <div class="col-md-6"><div class="card cartao p-4">
+        <h5 class="text-verde">📚 Letramento - Mudando vidas através da educação</h5>
+        <p>Atividades de leitura, escrita, interpretação de textos e raciocínio para crianças, respeitando o ritmo de cada uma. Despertam o interesse pelo conhecimento e fortalecem a autoestima.</p></div></div>
+
+      <div class="col-md-6"><div class="card cartao p-4">
+        <h5 class="text-verde">🩰 Arte &amp; Vida - Ballet</h5>
+        <p>Aulas de ballet que levam arte e cultura às crianças, estimulando coordenação motora, disciplina, concentração, criatividade e autoestima.</p></div></div>
+
+      <div class="col-md-6"><div class="card cartao p-4">
+        <h5 class="text-verde">💻 Navegadores do Futuro - Informática</h5>
+        <p>Inclusão digital para crianças e adultos, com aulas práticas de computador, ferramentas digitais e uso consciente da internet.</p></div></div>
+
+      <div class="col-md-6"><div class="card cartao p-4">
+        <h5 class="text-verde">🎓 Pré-Vestibular</h5>
+        <p>Preparação para jovens e adultos que querem chegar ao ensino superior. Em 2025, 60% dos alunos participantes foram aprovados. Em 2026, o projeto foi aprovado no edital do CEPOP, garantindo sua continuidade.</p></div></div>
+
+      <div class="col-md-6"><div class="card cartao p-4">
+        <h5 class="text-verde">🧁 Mulheres da Comunidade - Doces e geração de renda</h5>
+        <p>Curso de doces e confeitaria que capacita as mulheres da comunidade, incentivando o empreendedorismo feminino e a autonomia financeira.</p></div></div>
+
+      <div class="col-md-6"><div class="card cartao p-4">
+        <h5 class="text-verde">🛠️ Cursos Livres - Capacitação e oportunidades</h5>
+        <p>Formação inicial para jovens e adultos nas áreas de Auxiliar de Creche, Auxiliar Administrativo e Auxiliar de Farmácia, ampliando as chances de entrar no mercado de trabalho.</p></div></div>
+
+      <div class="col-md-6"><div class="card cartao p-4">
+        <h5 class="text-verde">🧺 Solidariedade que Alimenta - Cestas básicas</h5>
+        <p>Entrega mensal de alimentos essenciais para cerca de 30 famílias em situação de vulnerabilidade, contribuindo para a segurança alimentar.</p></div></div>
+
+      <div class="col-md-6"><div class="card cartao p-4">
+        <h5 class="text-verde">🤝 Faça a Diferença - Voluntariado e apadrinhamento</h5>
+        <p>Capta voluntários, padrinhos e madrinhas para apoiar o reforço escolar, a alimentação (lanches nas atividades), a saúde e a proteção social das crianças atendidas.</p>
+        <a href="{% url 'padrinho' %}" class="btn btn-verde btn-sm mt-auto align-self-start">Quero participar</a></div></div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

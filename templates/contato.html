@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block titulo %}Contato - ONG CRIAS{% endblock %}
+{% block conteudo %}
+<section class="fundo-creme"><div class="container">
+  <h2 class="titulo-secao">Fale Conosco</h2>
+  <div class="row g-4">
+    <div class="col-md-5">
+      <div class="card cartao p-4">
+        <p>📱 <a href="https://wa.me/5521972518763" target="_blank" rel="noopener">WhatsApp: (21) 97251-8763</a></p>
+        <p>📸 <a href="https://www.instagram.com/ongcrias/" target="_blank" rel="noopener">Instagram: @ongcrias</a></p>
+        <p>✉️ <a href="mailto:contato.crias@gmail.com">contato.crias@gmail.com</a></p>
+        <p class="mb-0">📍 Comunidade Menino de Deus, entre o Centro e o Rocha - São Gonçalo/RJ<br><a href="https://share.google/HW9shx8I1uddyyA2K" target="_blank" rel="noopener">Ver no Google Maps</a></p>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <form method="post" class="caixa-formulario">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label class="form-label">Nome</label>
+          <input type="text" name="nome" class="form-control" maxlength="100" value="{{ dados.nome }}" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">E-mail</label>
+          <input type="email" name="email" class="form-control" maxlength="100" value="{{ dados.email }}" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Mensagem</label>
+          <textarea name="mensagem" rows="4" class="form-control" maxlength="2000" required>{{ dados.mensagem }}</textarea>
+        </div>
+        <div class="form-check mb-3">
+          <input type="checkbox" name="consentimento" id="consentimento" class="form-check-input" required>
+          <label class="form-check-label small" for="consentimento">Concordo com o uso dos meus dados para contato da ONG CRIAS (<a href="{% url 'privacidade' %}" target="_blank">Política de Privacidade</a>)</label>
+        </div>
+        <button class="btn btn-verde w-100">Enviar Mensagem</button>
+      </form>
+    </div>
+  </div>
+</div></section>
+{% endblock %}

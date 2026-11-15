@@ -1,0 +1,133 @@
+/* Cores da identidade visual da CRIAS */
+:root {
+  --verde-principal: #01B073;
+  --verde-secundario: #34A853;
+  --verde-claro: #B5D71F;
+  --amarelo: #FFC107;
+  --laranja: #FF8507;
+  --creme: #FCF6E4;
+  --roxo: #735BB6;
+  --grafite: #333333;
+}
+
+/* Fontes do manual da marca: Lora no texto e League Spartan nos títulos */
+body {
+  font-family: 'Lora', Georgia, serif;
+  color: var(--grafite);
+  background: var(--creme);
+}
+h1, h2, h3, h4, h5, h6, .btn, .nav-link, .numero {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 800;
+}
+
+.text-verde { color: var(--verde-principal); }
+.fundo-branco { background: #ffffff; }
+.fundo-creme { background: var(--creme); }
+
+section { padding: 4rem 0; }
+
+/* Menu do topo */
+.navbar-crias {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+}
+.navbar-crias .nav-link { color: var(--grafite) !important; font-weight: 600; }
+.navbar-crias .nav-link:hover { color: var(--verde-principal) !important; }
+.navbar-brand img { height: 42px; width: auto; }
+
+/* Botões */
+.btn-crias, .btn-verde {
+  font-weight: 700;
+  border: 0;
+  border-radius: 50px;
+  padding: .7rem 1.6rem;
+}
+.btn-crias { background: var(--amarelo); color: var(--grafite); }
+.btn-crias:hover { background: var(--laranja); color: #ffffff; }
+.btn-verde { background: var(--verde-principal); color: #ffffff; }
+.btn-verde:hover { background: var(--verde-secundario); color: #ffffff; }
+
+/* Banner da página inicial */
+.banner {
+  background: linear-gradient(135deg, var(--verde-principal), var(--verde-secundario));
+  color: #ffffff;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+.banner h1 { font-size: clamp(2rem, 5vw, 3.4rem); }
+.banner .mascote {
+  max-height: 430px;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, .25));
+}
+
+.foto-redonda {
+  border-radius: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+  max-width: 100%;
+}
+
+/* Títulos das seções, com a barrinha amarela embaixo */
+.titulo-secao { text-align: center; margin-bottom: 2.5rem; }
+.titulo-secao::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 5px;
+  border-radius: 5px;
+  background: var(--amarelo);
+  margin: .6rem auto 0;
+}
+
+/* Cartões */
+.cartao {
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+  transition: .3s;
+  height: 100%;
+}
+.cartao:hover { transform: translateY(-6px); }
+.icone { font-size: 2.6rem; }
+
+/* Números do impacto */
+.numero { font-size: 2.8rem; color: var(--verde-principal); }
+
+/* Caixa branca dos formulários */
+.caixa-formulario {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .1);
+  padding: 2rem;
+}
+
+/* Rodapé */
+footer { background: var(--grafite); color: #dddddd; padding: 2.5rem 0; }
+footer a { color: var(--amarelo); text-decoration: none; }
+
+/* Botão do WhatsApp fixo no canto da tela */
+.whats-flutuante {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #ffffff;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .3);
+  z-index: 999;
+  text-decoration: none;
+}
+.whats-flutuante:hover { color: #ffffff; transform: scale(1.1); }
+
+/* Animação leve: os blocos "aparecer" sobem e surgem quando a página abre */
+@keyframes subir {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: none; }
+}
+.aparecer { animation: subir .8s ease both; }

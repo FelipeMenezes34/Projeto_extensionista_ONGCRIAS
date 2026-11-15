@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}Doações - ONG CRIAS{% endblock %}
+{% block conteudo %}
+<section class="fundo-creme"><div class="container" style="max-width:820px">
+  <h2 class="titulo-secao">Faça uma Doação</h2>
+  <p class="text-center">Toda contribuição faz a diferença! Não existe valor mínimo nem máximo: você doa a quantia que puder e ajuda a manter educação, alimentação, cultura e qualificação para crianças, adolescentes e famílias.</p>
+
+  <div class="row g-4 align-items-center caixa-formulario">
+    <div class="col-md-5 text-center">
+      <img src="{% static 'img/qrcode-pix.png' %}" alt="QR Code PIX da ONG CRIAS" width="240" height="240" class="img-fluid">
+      <p class="small mt-2 mb-0">Aponte a câmera do app do seu banco</p>
+    </div>
+    <div class="col-md-7">
+      <h5>PIX Copia e Cola</h5>
+      <textarea id="pix-codigo" class="form-control small mb-2" rows="3" readonly>00020126450014br.gov.bcb.pix0123contato.crias@gmail.com5204000053039865802BR5925CENTRO DE REFERENCIA INTE6011SAO GONCALO622605226EBb5Ae4i15gsiiQ9KsSm563045666</textarea>
+      <button type="button" id="botao-copiar" class="btn btn-verde btn-sm" onclick="copiarPix()">Copiar código</button>
+
+      <h5 class="mt-4">Chaves PIX</h5>
+      <p class="mb-1">E-mail: <strong>contato.crias@gmail.com</strong></p>
+      <p class="mb-0">CNPJ: <strong>12.605.775/0001-70</strong> (Banco Itaú (chave PIX: CNPJ))</p>
+
+      <h5 class="mt-4">Transferência bancária</h5>
+      <p class="mb-0">Banco Cora - Agência 0001 - Conta 1430779-9</p>
+      <p class="small text-muted mb-0">Favorecido: ONG CRIAS - CNPJ 12.605.775/0001-70</p>
+    </div>
+  </div>
+
+  <p class="text-center mt-4">Prefere uma contribuição mensal? <a href="{% url 'padrinho' %}">Apadrinhe uma criança por R$ 50,00 ao mês.</a></p>
+</div></section>
+{% endblock %}
