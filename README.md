@@ -1,6 +1,6 @@
 # Site da ONG CRIAS
 
-Site institucional feito com Python, Django, MySQL e Bootstrap 5.
+Site institucional feito com Python, Django, SQLITE.
 
 ## Como o projeto está organizado
 ```
@@ -39,7 +39,7 @@ python manage.py runserver
 ```
 Site: http://127.0.0.1:8000  |  Painel: http://127.0.0.1:8000/painel-crias/
 
-Para usar MySQL: rode o `database.sql` no Workbench, coloque `DB_ENGINE=mysql` no `.env` e a senha em `DB_PASSWORD`.
+
 
 ## Publicar (ongcrias.org.br)
 No `.env` do servidor: `DEBUG=False`, uma `SECRET_KEY` nova e grande, `ALLOWED_HOSTS` e
